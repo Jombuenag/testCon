@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Error } from '../models/error.model';
-import { ErrorServiceService } from '../services/error-service.service';
+import {Component, Input, OnInit} from '@angular/core';
+import { Error} from '../models/error.model';
 
 @Component({
   selector: 'app-error-list',
@@ -9,22 +8,13 @@ import { ErrorServiceService } from '../services/error-service.service';
 })
 export class ErrorListComponent implements OnInit {
 
-  // Error list data must be an input,
-
+  @Input() errorMapTranslated: Error[];
   // Error list must just render data not ask for service
-
-  errorList: Error[] = [
-    new Error('File not found', ['file.jpg', 'file_2.jpg', 'file_large.jpg']),
-    new Error('File exists', [
-      'file3.jpg',
-      'file_test.jpg',
-      'file_large.jpg',
-      'file_.jpg',
-    ])
-  ];
-  constructor(private errService: ErrorServiceService) { }
+  errorList: Error [];
+  constructor() { }
 
   ngOnInit(): void {
+    this.errorList = this.errorMapTranslated.map((err: Error) => new Error(err[0], err[1]));
   }
 
 
