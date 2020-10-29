@@ -8,7 +8,7 @@ import { Error} from '../models/error.model';
 })
 export class ErrorListComponent implements OnInit {
 
-  @Input() errorMapTranslated: Error[];
+  @Input() errorMapTranslated: Error[] = [];
   // Error list must just render data not ask for service
   errorList: Error [];
   constructor() { }

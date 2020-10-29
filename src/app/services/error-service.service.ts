@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-import {interval, Observable, of} from 'rxjs';
-import { Error } from '../models/error.model';
-import {map, switchAll, take} from 'rxjs/operators';
-
+import {Observable, of} from 'rxjs';
 
 const ERROR_FILES: Array<[error: string, files: string[]]> = [
   ['NOT_FOUND', ['file_1.jpg', 'file_2', 'file_3']],
@@ -23,7 +20,6 @@ const ERROR_FILES$ = of(ERROR_FILES);
 })
 
 export class ErrorServiceService {
-  combined: any [];
   constructor() { }
 
   getErrorNames(): Observable<any> {

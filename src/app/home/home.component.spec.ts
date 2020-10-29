@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HomeComponent } from './home.component';
-
+import {ErrorListComponent} from '../error-list/error-list.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -9,7 +8,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent, ErrorListComponent ]
     })
     .compileComponents();
   });
@@ -22,6 +21,11 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display 5 elements', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelectorAll('.files').length).toEqual(5);
   });
 
 });
