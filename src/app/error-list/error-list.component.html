@@ -1,1 +1,9 @@
-<p>error-list works!</p>
+<div>
+  <ul class="errorList" *ngFor="let error of errorList"><h2>{{error.name}}</h2>
+    <li class="errorFiles">
+      <ul class="files" *ngFor="let errorfiles of error.files">
+        <li >{{errorfiles}}</li>
+      </ul>
+    </li>
+  </ul>
+</div>

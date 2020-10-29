@@ -17,11 +17,8 @@ export class ErrorListComponent implements OnInit {
       'file_.jpg',
     ])
   ];
-
   constructor() { }
 
   ngOnInit(): void {
-
   }
-
 }
