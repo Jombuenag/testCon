@@ -24,4 +24,9 @@ export class HomeComponent implements OnInit {
       });
     });
   }
+
+  showAlert(): any{
+    alert('calling directive');
+  }
+
 }

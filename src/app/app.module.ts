@@ -5,14 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorListComponent } from './error-list/error-list.component';
-import { CommonModule } from '@angular/common';
+import { ButtonDirective } from './directives/button.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ErrorListComponent
+    ErrorListComponent,
+    ButtonDirective
   ],
   imports: [
     BrowserModule,
